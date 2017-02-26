@@ -1,9 +1,12 @@
 {
-	"name": "tokutoku.tokutoku",
+	"name": "brackets-color-the-tag-name",
 	"title": "color the tag name",
 	"description": "color the tag name",
-	"version": "1.0.1",
-	"author": "Takashi Tokumoto",
+	"homepage": "https://github.com/jzmstrjp/brackets---color-the-tag-name",
+	"version": "1.0.2",
+	"keywords": ["color","tag"],
+	"author": "jzmstrjp",
+	"license": "MIT",
 	"engines": {
 		"brackets": ">=1.8.0"
 	},
