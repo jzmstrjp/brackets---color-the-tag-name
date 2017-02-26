@@ -2,8 +2,7 @@
 	"name": "tokutoku.tokutoku",
 	"title": "color the tag name",
 	"description": "color the tag name",
-	"homepage": "http://xn--yckccv7m2a3p.jp",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Takashi Tokumoto",
 	"engines": {
 		"brackets": ">=1.8.0"

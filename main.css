@@ -2,7 +2,7 @@
 	color: #faa !important;
 }
 [data-tag-name="body"]{
-	color: #0aa !important;
+	color: #cee !important;
 }
 [data-tag-name="div"]{
 	color: #0cc !important;
@@ -11,7 +11,7 @@
 	color: #aff !important;
 }
 [data-tag-name="footer"]{
-	color: #0a9 !important;
+	color: #09f !important;
 }
 [data-tag-name="a"]{
 	color: #f99!important;
@@ -71,6 +71,67 @@
 [data-tag-name="head"]{
 	color: #dda !important;
 }
+
+[data-tag-name="table"]{
+	color: #ef9 !important;
+}
+
+[data-tag-name="tbody"]{
+	color: #fcb !important;
+}
+
+[data-tag-name="thead"]{
+	color: #ef8 !important;
+}
+
+[data-tag-name="tr"]{
+	color: #eae !important;
+}
+
+[data-tag-name="th"]{
+	color: #f9c !important;
+}
+
+[data-tag-name="td"]{
+	color: #ff8 !important;
+}
+
+[data-tag-name="caption"]{
+	color: #fd9 !important;
+}
+
+[data-tag-name="figure"]{
+	color: #ced !important;
+}
+
+[data-tag-name="figcaption"]{
+	color: #aaf !important;
+}
+
+[data-tag-name="dl"]{
+	color: #6cf !important;
+}
+
+[data-tag-name="dt"]{
+	color: #9df !important;
+}
+
+[data-tag-name="dd"]{
+	color: #dd9 !important;
+}
+
+[data-tag-name="html"]{
+	color: #cac !important;
+}
+
+[data-tag-name="img"]{
+	color: #afc !important;
+}
+
+[data-tag-name="title"]{
+	color: #fcc !important;
+}
+
 
 
 
