@@ -1,0 +1,76 @@
+[data-tag-name="header"]{
+	color: #faa !important;
+}
+[data-tag-name="body"]{
+	color: #0aa !important;
+}
+[data-tag-name="div"]{
+	color: #0cc !important;
+}
+[data-tag-name="meta"]{
+	color: #aff !important;
+}
+[data-tag-name="footer"]{
+	color: #0a9 !important;
+}
+[data-tag-name="a"]{
+	color: #f99!important;
+}
+[data-tag-name="ul"]{
+	color: #ff0 !important;
+}
+[data-tag-name="ol"]{
+	color: #9ac !important;
+}
+[data-tag-name="span"]{
+	color: #fd9 !important;
+}
+
+
+[data-tag-name="li"]{
+	color: #faa !important;
+}
+[data-tag-name="p"]{
+	color: #0f0 !important;
+}
+
+[data-tag-name="main"]{
+	color: #0ff !important;
+}
+[data-tag-name="span"]{
+	color: #fcd !important;
+}
+
+[data-tag-name="section"]{
+	color: #faf !important;
+}
+[data-tag-name="ht"]{
+	color: #7cf !important;
+}
+[data-tag-name="h1"]{
+	color: #faf !important;
+}
+[data-tag-name="h2"]{
+	color: #f3d !important;
+}
+[data-tag-name="h3"]{
+	color: #f0a !important;
+}
+[data-tag-name="small"]{
+	color: #aaf !important;
+}
+
+[data-tag-name="script"]{
+	color: #afa !important;
+}
+
+[data-tag-name="link"]{
+	color: #ad6 !important;
+}
+
+[data-tag-name="head"]{
+	color: #dda !important;
+}
+
+
+
