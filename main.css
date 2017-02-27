@@ -11,7 +11,7 @@
 	color: #aff !important;
 }
 [data-tag-name="footer"]{
-	color: #09f !important;
+	color: #0cf !important;
 }
 [data-tag-name="a"]{
 	color: #f99!important;
@@ -26,10 +26,10 @@
 	color: #fd9 !important;
 }
 
-
 [data-tag-name="li"]{
-	color: #faa !important;
+	color: #ada !important;
 }
+
 [data-tag-name="p"]{
 	color: #0f0 !important;
 }
@@ -54,7 +54,16 @@
 	color: #f3d !important;
 }
 [data-tag-name="h3"]{
-	color: #f0a !important;
+	color: #d39 !important;
+}
+[data-tag-name="h4"]{
+	color: #fc9 !important;
+}
+[data-tag-name="h5"]{
+	color: #0cf !important;
+}
+[data-tag-name="h6"]{
+	color: #0fc !important;
 }
 [data-tag-name="small"]{
 	color: #aaf !important;
@@ -130,6 +139,64 @@
 
 [data-tag-name="title"]{
 	color: #fcc !important;
+}
+
+
+
+[data-tag-name="article"]{
+	color: #fc0 !important;
+}
+
+[data-tag-name="aside"]{
+	color: #dcb !important;
+}
+
+[data-tag-name="input"]{
+	color: #dcc !important;
+}
+
+[data-tag-name="button"]{
+	color: #fbb !important;
+}
+
+[data-tag-name="sup"]{
+	color: #cdf !important;
+}
+
+[data-tag-name="sub"]{
+	color: #add !important;
+}
+
+[data-tag-name="strong"]{
+	color: #fc9 !important;
+}
+
+[data-tag-name="audio"]{
+	color: #ced !important;
+}
+
+[data-tag-name="video"]{
+	color: #efc !important;
+}
+
+[data-tag-name="nav"]{
+	color: #0ee !important;
+}
+
+[data-tag-name="textarea"]{
+	color: #ed9 !important;
+}
+
+[data-tag-name="select"]{
+	color: #cff !important;
+}
+
+[data-tag-name="option"]{
+	color: #edd !important;
+}
+
+[data-tag-name="address"]{
+	color: #ee6 !important;
 }
 
 
