@@ -7,25 +7,36 @@ define(function (require, exports, module) {
 		MainViewManager = brackets.getModule('view/MainViewManager'),
 		ExtensionUtils = brackets.getModule("utils/ExtensionUtils");
 
-	var timer;
+	var able = true;
+	var timer = false;
 	
 	ExtensionUtils.loadStyleSheet(module, "main.css");
 
 	AppInit.appReady(function () {
-		$(document).on("click mousewheel keydown keyup", timer_func);
+		$(document).on("click mousewheel keyup", timer_func);
 	});
 	
 	function timer_func(){
-		clearTimeout(timer);
-		timer = setTimeout(tag_color_change, 100);
+		if(able){
+			action();
+			able = false;
+		}
+		if(!timer){
+			timer = setTimeout(function(){
+				able = true;
+				timer = false;
+			}, 100);
+		}
+	}
+	
+	function action(){
+		setTimeout(tag_color_change, 100);
 	}
 
 	function tag_color_change() {
-		console.log("tag_color_change");
 		var tags = document.querySelectorAll(".cm-tag:not(.cm-bracket)");
-		[].forEach.call(tags, function (elm, i, arr) {
-			//console.log("tag_name_" + elm.innerHTML.slice(0,2));
-			//$(elm).addClass("tag_name_" + elm.innerHTML.slice(0,2));
+		console.log("tag_color_change");
+		[].forEach.call(tags, function (elm) {
 			elm.setAttribute("data-tag-name", elm.innerHTML);
 		});
 	}

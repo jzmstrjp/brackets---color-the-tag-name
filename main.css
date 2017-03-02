@@ -5,7 +5,7 @@
 	color: #cee !important;
 }
 [data-tag-name="div"]{
-	color: #0cc !important;
+	color: #cdc !important;
 }
 [data-tag-name="meta"]{
 	color: #aff !important;
@@ -197,6 +197,14 @@
 
 [data-tag-name="address"]{
 	color: #ee6 !important;
+}
+
+[data-tag-name="pre"]{
+	color: #FFB304 !important;
+}
+
+[data-tag-name="code"]{
+	color: #ADDA04 !important;
 }
 
 
