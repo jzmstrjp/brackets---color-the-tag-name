@@ -11,18 +11,13 @@ define(function (require, exports, module) {
   
     var tags;
     var able = true;
-    var timer = false;
-    
     
     function timer_func(){
         if(able){
             action(100);
             able = false;
-        }
-        if(!timer){
-            timer = setTimeout(function(){
+            setTimeout(function(){
                 able = true;
-                timer = false;
             }, 100);
         }
     }
@@ -34,16 +29,15 @@ define(function (require, exports, module) {
     function tag_color_change() {
         if(!tags){
             tags = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
-            //tags = document.querySelectorAll(".cm-tag:not(.cm-bracket)");
         }
-        [].forEach.call(tags, function (elm) {
+        Array.prototype.forEach.call(tags, function (elm) {
             elm.setAttribute("data-tag-name", elm.innerHTML);
         });
     }
     
     function updateUI() {
         var editor  = EditorManager.getCurrentFullEditor();
-        $(editor).on("scroll keyEvent cursorActivity", timer_func);
+        editor.on("scroll keyEvent cursorActivity", timer_func);
         action(300);
     }
 
