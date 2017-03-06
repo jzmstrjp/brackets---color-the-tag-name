@@ -37,7 +37,7 @@ define(function (require, exports, module) {
     
     function updateUI() {
         var editor  = EditorManager.getCurrentFullEditor();
-        editor.on("scroll keyEvent cursorActivity", timer_func);
+        editor.on("scroll keyEvent cursorActivity click", timer_func);
         action(300);
     }
 
