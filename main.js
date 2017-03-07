@@ -14,10 +14,10 @@ define(function (require, exports, module) {
 
 	function timer_func() {
 		if (able) {
-			action(100);
 			able = false;
 			setTimeout(function () {
 				able = true;
+				action(0);
 			}, 100);
 		}
 	}
