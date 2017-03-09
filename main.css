@@ -208,5 +208,74 @@
 }
 
 
+[data-tag-name="ruby"]{
+	color: #dea !important;
+}
+
+[data-tag-name="rb"]{
+	color: #dac !important;
+}
+
+[data-tag-name="rt"]{
+	color: #afb !important;
+}
+
+[data-tag-name="rp"]{
+	color: #fdc !important;
+}
+
+[data-tag-name="hr"]{
+	color: #efc !important;
+}
+
+[data-tag-name="br"]{
+	color: #ccc !important;
+}
+
+[data-tag-name="svg"]{
+	color: #6fd !important;
+}
+
+[data-tag-name="canvas"]{
+	color: #6cf !important;
+}
+
+[data-tag-name="hgroup"]{
+	color: #fac !important;
+}
+
+[data-tag-name="b"]{
+	color: #eaf !important;
+}
+
+[data-tag-name="dfn"]{
+	color: #bfa !important;
+}
+
+[data-tag-name="optgroup"]{
+	color: #eeb !important;
+}
+
+[data-tag-name="fieldset"]{
+	color: #fce !important;
+}
+
+[data-tag-name="legend"]{
+	color: #afe !important;
+}
+
+[data-tag-name="mark"]{
+	color: #efc !important;
+}
+
+[data-tag-name="menu"]{
+	color: #3bf !important;
+}
+
+
+[data-tag-name="summary"]{
+	color: #ADDA04 !important;
+}
+
 
 
