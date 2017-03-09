@@ -274,7 +274,22 @@
 
 
 [data-tag-name="summary"]{
-	color: #ADDA04 !important;
+	color: #fc0 !important;
+}
+
+
+[data-tag-name="samp"]{
+	color: #fe3 !important;
+}
+
+
+[data-tag-name="kbd"]{
+	color: #9fc !important;
+}
+
+
+[data-tag-name="em"]{
+	color: #e6f !important;
 }
 
 
