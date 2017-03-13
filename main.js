@@ -43,7 +43,7 @@ define(function (require, exports, module) {
 		}
 		Array.prototype.forEach.call(cmTag, function (elm, i, arr) {
 			if(!elm.classList.contains("cm-bracket")){
-				if(arr[i-1].classList.contains("cm-bracket")){
+				if(arr[i-1].classList.contains("cm-bracket") && arr[i-1].innerHTML.indexOf('&lt;') !== -1){
 					arr[i-1].setAttribute("data-tag-name", elm.innerHTML);
 				}
 				elm.setAttribute("data-tag-name", elm.innerHTML);
