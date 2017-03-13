@@ -9,7 +9,7 @@ define(function (require, exports, module) {
 
 	ExtensionUtils.loadStyleSheet(module, "main.css");
 
-	var tags;
+	var cmTag;
 	var able = true;
 
 	function timer_func() {
@@ -27,11 +27,30 @@ define(function (require, exports, module) {
 	}
 
 	function tag_color_change() {
-		if (!tags) {
-			tags = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
+		var cmBracket = document.querySelectorAll("#editor-holder .cm-bracket");
+		Array.prototype.forEach.call(cmBracket, function (elm, i, arr) {
+			if (elm.innerHTML.indexOf('&gt;&lt;') !== -1){
+				var bunkatsu = elm.innerHTML.split("&gt;&lt;");
+				var newElm = document.createElement("span");
+				newElm.className = "cm-tag cm-bracket";
+				newElm.innerHTML = bunkatsu[0] + "&gt;";
+				elm.parentNode.insertBefore(newElm, elm);
+				elm.innerHTML = "&lt;" + bunkatsu[1];
+			}
+		});
+		if (!cmTag) {
+			cmTag = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
 		}
-		Array.prototype.forEach.call(tags, function (elm) {
-			elm.setAttribute("data-tag-name", elm.innerHTML);
+		Array.prototype.forEach.call(cmTag, function (elm, i, arr) {
+			if(!elm.classList.contains("cm-bracket")){
+				if(arr[i-1].classList.contains("cm-bracket")){
+					arr[i-1].setAttribute("data-tag-name", elm.innerHTML);
+				}
+				elm.setAttribute("data-tag-name", elm.innerHTML);
+				if(arr[i+1] && arr[i+1].classList.contains("cm-bracket")){
+					arr[i+1].setAttribute("data-tag-name", elm.innerHTML);
+				}
+			}
 		});
 	}
 
