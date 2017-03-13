@@ -10,6 +10,7 @@ define(function (require, exports, module) {
 	ExtensionUtils.loadStyleSheet(module, "main.css");
 
 	var cmTag;
+	var cmBracket;
 	var able = true;
 
 	function timer_func() {
@@ -27,7 +28,9 @@ define(function (require, exports, module) {
 	}
 
 	function tag_color_change() {
-		var cmBracket = document.querySelectorAll("#editor-holder .cm-bracket");
+		if (!cmBracket) {
+			cmBracket = document.getElementById("editor-holder").getElementsByClassName("cm-bracket");
+		}
 		Array.prototype.forEach.call(cmBracket, function (elm, i, arr) {
 			if (elm.innerHTML.indexOf('&gt;&lt;') !== -1){
 				var bunkatsu = elm.innerHTML.split("&gt;&lt;");
