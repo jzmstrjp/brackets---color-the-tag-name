@@ -38,11 +38,11 @@
 [data-tag-name="legend"]{color: #afe !important;}
 [data-tag-name="li"]{color: #E7DC9E !important;}
 [data-tag-name="link"]{color: #ad6 !important;}
-[data-tag-name="main"]{color: #0ff !important;}
+[data-tag-name="main"]{color: #42FF00 !important;}
 [data-tag-name="mark"]{color: #efc !important;}
 [data-tag-name="menu"]{color: #3bf !important;}
 [data-tag-name="meta"]{color: #aff !important;}
-[data-tag-name="nav"]{color: #0ee !important;}
+[data-tag-name="nav"]{color: #00FFFF !important;}
 [data-tag-name="ol"]{color: #9ac !important;}
 [data-tag-name="optgroup"]{color: #eeb !important;}
 [data-tag-name="option"]{color: #edd !important;}
@@ -67,9 +67,9 @@
 [data-tag-name="tbody"]{color: #fcb !important;}
 [data-tag-name="td"]{color: #ff8 !important;}
 [data-tag-name="textarea"]{color: #ed9 !important;}
-[data-tag-name="th"]{color: #f9c !important;}
-[data-tag-name="thead"]{color: #ef8 !important;}
+[data-tag-name="th"]{color: #FF99F2 !important;}
+[data-tag-name="thead"]{color: #88FFBA !important;}
 [data-tag-name="title"]{color: #fcc !important;}
-[data-tag-name="tr"]{color: #eae !important;}
+[data-tag-name="tr"]{color: #AAEEC4 !important;}
 [data-tag-name="ul"]{color: #ff0 !important;}
 [data-tag-name="video"]{color: #efc !important;}

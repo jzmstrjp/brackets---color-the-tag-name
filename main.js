@@ -10,7 +10,6 @@ define(function (require, exports, module) {
 	ExtensionUtils.loadStyleSheet(module, "main.css");
 
 	var cmTag;
-	var cmBracket;
 	var able = true;
 
 	function timer_func() {
@@ -28,31 +27,32 @@ define(function (require, exports, module) {
 	}
 
 	function tag_color_change() {
-		if (!cmBracket) {
-			cmBracket = document.getElementById("editor-holder").getElementsByClassName("cm-bracket");
-		}
+		/*var cmBracket = document.getElementById("editor-holder").querySelectorAll(".cm-bracket");
 		Array.prototype.forEach.call(cmBracket, function (elm, i, arr) {
-			if (elm.innerHTML.indexOf('&gt;&lt;') !== -1){
-				var bunkatsu = elm.innerHTML.split("&gt;&lt;");
-				var newElm = document.createElement("span");
-				newElm.className = "cm-tag cm-bracket";
-				newElm.innerHTML = bunkatsu[0] + "&gt;";
-				elm.parentNode.insertBefore(newElm, elm);
-				elm.innerHTML = "&lt;" + bunkatsu[1];
+			var gt = elm.innerHTML.indexOf('&gt;');
+			var lt = elm.innerHTML.indexOf('&lt;');
+			if (gt !== -1 && lt !== -1 && elm.getAttribute("data-cloned") != "true"){
+				elm.setAttribute("data-cloned", "true");
+				var newElm = $(elm).clone(true);
+				console.log("gt"+gt);
+				console.log("lt"+lt);
+				newElm[0].innerHTML = newElm[0].innerHTML.slice(0, gt+3);
+				elm.innerHTML = elm.innerHTML.slice(lt);
+				newElm.insertBefore(elm);
 			}
-		});
-		if (!cmTag) {
+		});*/
+		if(!cmTag){
 			cmTag = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
 		}
 		Array.prototype.forEach.call(cmTag, function (elm, i, arr) {
 			if(!elm.classList.contains("cm-bracket")){
-				if(arr[i-1].classList.contains("cm-bracket") && arr[i-1].innerHTML.indexOf('&lt;') !== -1){
+				/*if(arr[i-1].classList.contains("cm-bracket") && arr[i-1].innerHTML.indexOf('&lt;') !== -1){
 					arr[i-1].setAttribute("data-tag-name", elm.innerHTML);
-				}
+				}*/
 				elm.setAttribute("data-tag-name", elm.innerHTML);
-				if(arr[i+1] && arr[i+1].classList.contains("cm-bracket")){
+				/*if(arr[i+1] && arr[i+1].classList.contains("cm-bracket")){
 					arr[i+1].setAttribute("data-tag-name", elm.innerHTML);
-				}
+				}*/
 			}
 		});
 	}
