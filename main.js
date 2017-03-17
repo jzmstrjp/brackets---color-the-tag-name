@@ -10,23 +10,9 @@ define(function (require, exports, module) {
 	ExtensionUtils.loadStyleSheet(module, "main.css");
 
 	var cmTag;
-	var able = true;
-
-	function timer_func() {
-		if (able) {
-			able = false;
-			setTimeout(function () {
-				able = true;
-				action(0);
-			}, 100);
-		}
-	}
-
-	function action(time) {
-		setTimeout(tag_color_change, time);
-	}
 
 	function tag_color_change() {
+		//console.log("発火");
 		/*var cmBracket = document.getElementById("editor-holder").querySelectorAll(".cm-bracket");
 		Array.prototype.forEach.call(cmBracket, function (elm, i, arr) {
 			var gt = elm.innerHTML.indexOf('&gt;');
@@ -41,9 +27,7 @@ define(function (require, exports, module) {
 				newElm.insertBefore(elm);
 			}
 		});*/
-		if(!cmTag){
-			cmTag = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
-		}
+
 		Array.prototype.forEach.call(cmTag, function (elm, i, arr) {
 			if(!elm.classList.contains("cm-bracket")){
 				/*if(arr[i-1].classList.contains("cm-bracket") && arr[i-1].innerHTML.indexOf('&lt;') !== -1){
@@ -58,16 +42,15 @@ define(function (require, exports, module) {
 	}
 
 	function updateUI() {
+		cmTag = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
 		var editor = EditorManager.getCurrentFullEditor();
-		editor.on("scroll keyup cursorActivity", timer_func);
-		$(document).on("click", timer_func);
-		action(300);
+		var cm = editor._codeMirror;
+		cm.on("update", tag_color_change);
 	}
 
 
 	// Initialize extension
 	AppInit.appReady(function () {
 		MainViewManager.on("currentFileChange", updateUI);
-		action(3000);
 	});
 });
