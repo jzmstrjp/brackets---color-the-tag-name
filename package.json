@@ -1,9 +1,9 @@
 {
 	"name": "brackets-color-the-tag-name",
 	"title": "color the tag name",
-	"description": "color the tag name, with no flicker!",
+	"description": "color the tag name, and brackets.",
 	"homepage": "https://github.com/jzmstrjp/brackets---color-the-tag-name",
-	"version": "2.1.0",
+	"version": "3.0.0",
 	"keywords": ["color","tag"],
 	"author": "jzmstrjp",
 	"license": "MIT",
@@ -16,7 +16,7 @@
 	],
 	"package-i18n": {
 		"ja":{
-			"description": "タグ名にそれぞれ色を付けます。ちらつきも解消しました。",
+			"description": "タグに色を付けます。ちらつき、解消しました。",
 			"title": "タグごとに色分け君"
 		}
 	}

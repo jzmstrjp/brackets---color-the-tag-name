@@ -1,4 +1,4 @@
-[data-tag-name="a"]{color: #00FF36!important;}
+[data-tag-name="a"]{color: #00FF36 !important;}
 [data-tag-name="address"]{color: #ee6 !important;}
 [data-tag-name="article"]{color: #fc0 !important;}
 [data-tag-name="aside"]{color: #dcb !important;}
@@ -21,7 +21,7 @@
 [data-tag-name="figure"]{color: #ced !important;}
 [data-tag-name="footer"]{color: #FFE400 !important;}
 [data-tag-name="h1"]{color: #FF6161 !important;}
-[data-tag-name="h2"]{color: #FF8838 !important;}
+[data-tag-name="h2"]{color: #FF66cc !important;}
 [data-tag-name="h3"]{color: #E7E578 !important;}
 [data-tag-name="h4"]{color: #A3FF99 !important;}
 [data-tag-name="h5"]{color: #0cf !important;}
@@ -46,7 +46,7 @@
 [data-tag-name="ol"]{color: #9ac !important;}
 [data-tag-name="optgroup"]{color: #eeb !important;}
 [data-tag-name="option"]{color: #edd !important;}
-[data-tag-name="p"]{color: #FF9813 !important;}
+[data-tag-name="p"]{color: #FFcc00 !important;}
 [data-tag-name="pre"]{color: #FFB304 !important;}
 [data-tag-name="rb"]{color: #dac !important;}
 [data-tag-name="rp"]{color: #fdc !important;}
@@ -54,7 +54,7 @@
 [data-tag-name="ruby"]{color: #dea !important;}
 [data-tag-name="samp"]{color: #fe3 !important;}
 [data-tag-name="script"]{color: #A5CDD3 !important;}
-[data-tag-name="section"]{color: #FF96CA !important;}
+[data-tag-name="section"]{color: #FFccdd !important;}
 [data-tag-name="select"]{color: #cff !important;}
 [data-tag-name="small"]{color: #aaf !important;}
 [data-tag-name="span"]{color: #BBF6FF !important;}
