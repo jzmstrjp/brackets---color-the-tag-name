@@ -1,3 +1,24 @@
+[data-tag-name="h1"],
+[data-tag-name="h2"],
+[data-tag-name="h3"],
+[data-tag-name="h4"],
+[data-tag-name="h5"],
+[data-tag-name="h6"],
+[data-tag-name="html"],
+[data-tag-name="head"],
+[data-tag-name="title"],
+[data-tag-name="body"],
+[data-tag-name="header"],
+[data-tag-name="nav"],
+[data-tag-name="main"],
+[data-tag-name="article"],
+[data-tag-name="aside"],
+[data-tag-name="footer"],
+[data-tag-name="strong"],
+[data-tag-name="em"],
+[data-tag-name="b"],
+[data-tag-name="section"]{font-weight: bold;}
+/* .CodeMirror span{font-family: SourceCodePro-Medium, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', monospace;} */
 [data-tag-name="a"]{color: #00FF36 !important;}
 [data-tag-name="address"]{color: #ee6 !important;}
 [data-tag-name="article"]{color: #fc0 !important;}
