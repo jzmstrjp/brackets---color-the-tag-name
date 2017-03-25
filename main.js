@@ -27,13 +27,14 @@ define(function(require, exports, module) {
 
     function tag_color_change() {
         Array.prototype.forEach.call(cmTag, function(elm, i, arr) {
+            var html = elm.innerHTML;
             if (!elm.classList.contains("cm-bracket")) {
                 if (arr[i - 1].classList.contains("cm-open-bracket")) {
-                    arr[i - 1].setAttribute("data-tag-name", elm.innerHTML);
+                    arr[i - 1].setAttribute("data-tag-name", html);
                 }
-                elm.setAttribute("data-tag-name", elm.innerHTML);
+                elm.setAttribute("data-tag-name", html);
                 if (arr[i + 1] && arr[i + 1].classList.contains("cm-close-bracket")) {
-                    arr[i + 1].setAttribute("data-tag-name", elm.innerHTML);
+                    arr[i + 1].setAttribute("data-tag-name", html);
                 }
             }
         });

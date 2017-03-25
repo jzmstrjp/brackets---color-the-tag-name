@@ -31,12 +31,12 @@
 [data-tag-name="br"]{color: #FCDFB5 !important;}
 [data-tag-name="button"]{color: #fbb !important;}
 [data-tag-name="canvas"]{color: #6cf !important;}
-[data-tag-name="caption"]{color: #fd9 !important;}
+[data-tag-name="caption"]{color: #6dd !important;}
 [data-tag-name="code"]{color: #ADDA04 !important;}
 [data-tag-name="dd"]{color: #dd9 !important;}
 [data-tag-name="dfn"]{color: #bfa !important;}
 [data-tag-name="div"]{color: #BAD7DC !important;}
-[data-tag-name="dl"]{color: #6cf !important;}
+[data-tag-name="dl"]{color: #e93 !important;}
 [data-tag-name="dt"]{color: #9df !important;}
 [data-tag-name="em"]{color: #e6f !important;}
 [data-tag-name="fieldset"]{color: #fce !important;}
@@ -82,6 +82,7 @@
 [data-tag-name="small"]{color: #aaf !important;}
 [data-tag-name="span"]{color: #BBF6FF !important;}
 [data-tag-name="strong"]{color: #fc9 !important;}
+[data-tag-name="style"]{color: #0df !important;}
 [data-tag-name="sub"]{color: #add !important;}
 [data-tag-name="summary"]{color: #fc0 !important;}
 [data-tag-name="sup"]{color: #cdf !important;}
@@ -91,7 +92,8 @@
 [data-tag-name="td"]{color: #ff8 !important;}
 [data-tag-name="textarea"]{color: #ed9 !important;}
 [data-tag-name="th"]{color: #FF99F2 !important;}
-[data-tag-name="thead"]{color: #88FFBA !important;}
+[data-tag-name="thead"]{color: #f88 !important;}
+[data-tag-name="tfoot"]{color: #0ce !important;}
 [data-tag-name="title"]{color: #fcc !important;}
 [data-tag-name="tr"]{color: #AAEEC4 !important;}
 [data-tag-name="ul"]{color: #ff0 !important;}
