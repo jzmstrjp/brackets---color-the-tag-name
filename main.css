@@ -21,7 +21,9 @@
 [data-tag-name="dt"],
 [data-tag-name="form"],
 [data-tag-name="section"]{font-weight: bold;}
-/*.CodeMirror span{font-family: Consolas, SourceCodePro-Medium, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', monospace;}*/
+
+
+
 [data-tag-name="a"]{color: #00FF36 !important;}
 [data-tag-name="address"]{color: #ee6 !important;}
 [data-tag-name="article"]{color: #fc0 !important;}
@@ -57,11 +59,11 @@
 [data-tag-name="hr"]{color: #efc !important;}
 [data-tag-name="ht"]{color: #7cf !important;}
 [data-tag-name="html"]{color: #cac !important;}
-[data-tag-name="img"]{color: #afc !important;}
+[data-tag-name="img"]{color: #AAF2FF !important;}
 [data-tag-name="input"]{color: #dcc !important;}
 [data-tag-name="kbd"]{color: #9fc !important;}
 [data-tag-name="legend"]{color: #afe !important;}
-[data-tag-name="li"]{color: #fb0 !important;}
+[data-tag-name="li"]{color: #fbb !important;}
 [data-tag-name="link"]{color: #ad6 !important;}
 [data-tag-name="main"]{color: #42FF00 !important;}
 [data-tag-name="mark"]{color: #efc !important;}
@@ -98,5 +100,5 @@
 [data-tag-name="tfoot"]{color: #0ce !important;}
 [data-tag-name="title"]{color: #fcc !important;}
 [data-tag-name="tr"]{color: #AAEEC4 !important;}
-[data-tag-name="ul"]{color: #ff0 !important;}
+[data-tag-name="ul"]{color: #ffa !important;}
 [data-tag-name="video"]{color: #efc !important;}
