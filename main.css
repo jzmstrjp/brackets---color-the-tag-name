@@ -19,8 +19,9 @@
 [data-tag-name="b"],
 [data-tag-name="th"],
 [data-tag-name="dt"],
+[data-tag-name="form"],
 [data-tag-name="section"]{font-weight: bold;}
-/* .CodeMirror span{font-family: Consolas, SourceCodePro-Medium, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', monospace;} */
+/*.CodeMirror span{font-family: Consolas, SourceCodePro-Medium, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', monospace;}*/
 [data-tag-name="a"]{color: #00FF36 !important;}
 [data-tag-name="address"]{color: #ee6 !important;}
 [data-tag-name="article"]{color: #fc0 !important;}
@@ -43,6 +44,7 @@
 [data-tag-name="figcaption"]{color: #aaf !important;}
 [data-tag-name="figure"]{color: #ced !important;}
 [data-tag-name="footer"]{color: #FFE400 !important;}
+[data-tag-name="form"]{color: #00FFC6 !important;}
 [data-tag-name="h1"]{color: #FF6161 !important;}
 [data-tag-name="h2"]{color: #FF66cc !important;}
 [data-tag-name="h3"]{color: #E7E578 !important;}
@@ -59,7 +61,7 @@
 [data-tag-name="input"]{color: #dcc !important;}
 [data-tag-name="kbd"]{color: #9fc !important;}
 [data-tag-name="legend"]{color: #afe !important;}
-[data-tag-name="li"]{color: #E7DC9E !important;}
+[data-tag-name="li"]{color: #fb0 !important;}
 [data-tag-name="link"]{color: #ad6 !important;}
 [data-tag-name="main"]{color: #42FF00 !important;}
 [data-tag-name="mark"]{color: #efc !important;}
