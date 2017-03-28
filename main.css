@@ -59,6 +59,7 @@
 [data-tag-name="hr"]{color: #efc !important;}
 [data-tag-name="ht"]{color: #7cf !important;}
 [data-tag-name="html"]{color: #cac !important;}
+[data-tag-name="iframe"]{color: #FF80C2 !important;}
 [data-tag-name="img"]{color: #AAF2FF !important;}
 [data-tag-name="input"]{color: #dcc !important;}
 [data-tag-name="kbd"]{color: #9fc !important;}
@@ -70,6 +71,7 @@
 [data-tag-name="menu"]{color: #3bf !important;}
 [data-tag-name="meta"]{color: #aff !important;}
 [data-tag-name="nav"]{color: #00FFFF !important;}
+[data-tag-name="noscript"]{color: #FF7979 !important;}
 [data-tag-name="ol"]{color: #9ac !important;}
 [data-tag-name="optgroup"]{color: #eeb !important;}
 [data-tag-name="option"]{color: #edd !important;}
