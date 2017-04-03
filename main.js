@@ -10,6 +10,7 @@ define(function(require, exports, module) {
 	ExtensionUtils.loadStyleSheet(module, "main.css");
 
 	var cmTag;
+    var cmAttr;
     var overlay = {
         token: function(stream, state) {
             var ch;
@@ -38,10 +39,15 @@ define(function(require, exports, module) {
                 }
             }
         });
+        Array.prototype.forEach.call(cmAttr, function(elm, i, arr) {
+            var html = elm.innerHTML;
+            elm.setAttribute("data-attr-name", html);
+        });
     }
 
     function updateUI() {
         cmTag = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
+        cmAttr = document.getElementById("editor-holder").getElementsByClassName("cm-attribute");
         var editor = EditorManager.getCurrentFullEditor();
         var cm = editor._codeMirror;
         cm.removeOverlay(overlay);

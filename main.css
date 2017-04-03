@@ -20,9 +20,10 @@
 [data-tag-name="th"],
 [data-tag-name="dt"],
 [data-tag-name="form"],
-[data-tag-name="section"]{font-weight: bold;}
+[data-tag-name="section"],
+[data-attr-name="id"]{font-weight: bold;}
 
-
+[data-attr-name="id"]{color: #f00 !important;}
 
 [data-tag-name="a"]{color: #00FF36 !important;}
 [data-tag-name="address"]{color: #ee6 !important;}
