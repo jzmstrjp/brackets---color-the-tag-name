@@ -7,7 +7,7 @@ define(function(require, exports, module) {
         MainViewManager = brackets.getModule("view/MainViewManager"),
         ExtensionUtils = brackets.getModule("utils/ExtensionUtils");
 
-	ExtensionUtils.loadStyleSheet(module, "main.css");
+	ExtensionUtils.loadStyleSheet(module, "main.less");
 
 	var cmTag;
     var cmAttr;
