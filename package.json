@@ -1,9 +1,9 @@
 {
 	"name": "brackets-color-the-tag-name",
-	"title": "Color the tag name",
+	"title": "Color The Tag Name",
 	"description": "Color the tag name. You can use this with a bright theme, too.",
 	"homepage": "https://github.com/jzmstrjp/brackets---color-the-tag-name",
-	"version": "3.1.5",
+	"version": "3.1.6",
 	"keywords": ["color","tag"],
 	"author": "jzmstrjp",
 	"license": "MIT",
