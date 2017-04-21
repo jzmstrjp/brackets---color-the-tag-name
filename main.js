@@ -5,9 +5,57 @@ define(function(require, exports, module) {
     var EditorManager = brackets.getModule("editor/EditorManager"),
         AppInit = brackets.getModule("utils/AppInit"),
         MainViewManager = brackets.getModule("view/MainViewManager"),
-        ExtensionUtils = brackets.getModule("utils/ExtensionUtils");
+        ExtensionUtils = brackets.getModule("utils/ExtensionUtils"),
+        CommandManager = brackets.getModule("command/CommandManager"),
+        Menus          = brackets.getModule("command/Menus"),
+        PreferencesManager = brackets.getModule("preferences/PreferencesManager");
+
 
 	ExtensionUtils.loadStyleSheet(module, "main.less");
+
+
+    var commandID = "jzmstrjp.color_the_tag_name.simple_color_mode";
+    var preferencesID = "jzmstrjp.color_the_tag_name";
+    var enabled     = false,
+        prefs       = PreferencesManager.getExtensionPrefs(preferencesID);
+
+    var simple_color_mode_class_name = "color_the_tag_name_simple_mode",
+        colorful_mode_class_name = "color_the_tag_name_colorful_mode";
+
+    function handleToggleGuides() {
+        enabled = !enabled;
+        color_mode_set();
+    }
+
+    function color_mode_set(){
+        if(enabled){
+            document.body.classList.add(simple_color_mode_class_name);
+            document.body.classList.remove(colorful_mode_class_name);
+        }else{
+            document.body.classList.add(colorful_mode_class_name);
+            document.body.classList.remove(simple_color_mode_class_name);
+        }
+        prefs.set("enabled", enabled);
+        prefs.save();
+        CommandManager.get(commandID).setChecked(enabled);
+        //window.alert("Simple Color Mode:"+enabled+"!");
+    }
+
+    CommandManager.register("Simple Color Mode", commandID, handleToggleGuides);
+
+    prefs.definePreference("simple_color_mode", "boolean", enabled, {
+        description: "Simple Color Mode"
+    });
+
+    
+
+    
+
+
+
+
+
+
 
 	var cmTag;
     var cmAttr;
@@ -58,5 +106,10 @@ define(function(require, exports, module) {
     // Initialize extension
     AppInit.appReady(function() {
         MainViewManager.on("currentFileChange", updateUI);
+        
+        var menu = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
+        menu.addMenuItem(commandID);
+        enabled = prefs.get("enabled");
+        color_mode_set();
     });
 });
