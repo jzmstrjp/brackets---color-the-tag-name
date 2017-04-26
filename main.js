@@ -10,17 +10,17 @@ define(function(require, exports, module) {
         Menus          = brackets.getModule("command/Menus"),
         PreferencesManager = brackets.getModule("preferences/PreferencesManager");
 
-
-	ExtensionUtils.loadStyleSheet(module, "main.less");
-
-
-    var commandID = "jzmstrjp.color_the_tag_name.simple_color_mode";
-    var preferencesID = "jzmstrjp.color_the_tag_name";
-    var enabled     = false,
+    var commandID = "jzmstrjp.color_the_tag_name.simple_color_mode",
+        preferencesID = "jzmstrjp.color_the_tag_name",
+        enabled     = false,
         prefs       = PreferencesManager.getExtensionPrefs(preferencesID);
 
     var simple_color_mode_class_name = "color_the_tag_name_simple_mode",
         colorful_mode_class_name = "color_the_tag_name_colorful_mode";
+
+	ExtensionUtils.loadStyleSheet(module, "main.less");
+
+    
 
     function handleToggleGuides() {
         enabled = !enabled;
