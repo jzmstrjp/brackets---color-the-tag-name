@@ -3,7 +3,7 @@
 	"title": "Color The Tag Name",
 	"description": "Color the tag name. New Mode: Simple Color Mode",
 	"homepage": "https://github.com/jzmstrjp/brackets---color-the-tag-name",
-	"version": "3.2.2",
+	"version": "3.2.3",
 	"keywords": ["color","tag"],
 	"author": "jzmstrjp",
 	"license": "MIT",
@@ -16,7 +16,7 @@
 	],
 	"package-i18n": {
 		"ja":{
-			"description": "タグごとに色分けします。シンプルカラーモードを追加しました。",
+			"description": "タグの種類ごとに色分けします。シンプルカラーモードを追加しました。",
 			"title": "タグに色つけ太郎"
 		}
 	}
