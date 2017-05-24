@@ -1,9 +1,9 @@
 {
 	"name": "brackets-color-the-tag-name",
 	"title": "Color The Tag Name",
-	"description": "Color the tag name. New Mode: Simple Color Mode",
+	"description": "This extension colors the tag name. NEW INFO: You became to be able to make your original CSS(LESS) File, And You can customize tag colors!",
 	"homepage": "https://github.com/jzmstrjp/brackets---color-the-tag-name",
-	"version": "3.2.3",
+	"version": "4.0.0",
 	"keywords": ["color","tag"],
 	"author": "jzmstrjp",
 	"license": "MIT",
@@ -16,7 +16,7 @@
 	],
 	"package-i18n": {
 		"ja":{
-			"description": "タグの種類ごとに色分けします。シンプルカラーモードを追加しました。",
+			"description": "タグの種類ごとに色分けします。【新機能】オリジナルのCSSを作成できるようになりました。メニューの「表示」→「Customize Tag Colors」から作成できます。タグの色を自由に設定してください。",
 			"title": "タグに色つけ太郎"
 		}
 	}

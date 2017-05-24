@@ -8,7 +8,19 @@ define(function(require, exports, module) {
         ExtensionUtils = brackets.getModule("utils/ExtensionUtils"),
         CommandManager = brackets.getModule("command/CommandManager"),
         Menus          = brackets.getModule("command/Menus"),
+        FileUtils          = brackets.getModule("file/FileUtils"),
+        FileSystem              = brackets.getModule("filesystem/FileSystem"),
+        Dialogs                 = brackets.getModule("widgets/Dialogs"),
+        Strings                 = brackets.getModule("strings"),
+        STRINGS                 = require("modules/Strings"),
+        //DocumentManager = brackets.getModule("document/DocumentManager"),
         PreferencesManager = brackets.getModule("preferences/PreferencesManager");
+
+    var SLDialog_tmp            = require("text!htmlContent/dialog_storage_location_setting.html"),
+        SLDialog,
+        templateCss = require("text!templateCss/template.less"),
+        commandID2 = "jzmstrjp.color_the_tag_name.customaize_tag_color",
+        context                 = {Strings: Strings, MyStrings: STRINGS};
 
     var commandID = "jzmstrjp.color_the_tag_name.simple_color_mode",
         preferencesID = "jzmstrjp.color_the_tag_name",
@@ -18,9 +30,47 @@ define(function(require, exports, module) {
     var simple_color_mode_class_name = "color_the_tag_name_simple_mode",
         colorful_mode_class_name = "color_the_tag_name_colorful_mode";
 
-	ExtensionUtils.loadStyleSheet(module, "main.less");
+
+
+    //ExtensionUtils.loadStyleSheet(module, "main.less");
+	//ExtensionUtils.loadStyleSheet(module, "C:/Users/coolermaster2/Desktop/toku/便利ソフト/customaize.less");
+
+    function loadCss(path){
+        if(path){
+            ExtensionUtils.loadStyleSheet(module, path + "color_the_tag_name.less");
+        } else {
+            ExtensionUtils.loadStyleSheet(module, "main.less");
+        }
+    }
 
     
+    function saveOriginalCss(path){
+        path = path.replace(/\\|\\/g, '/');
+        if(path.slice(-1) != "/"){
+            path += "/";
+        }
+        var fileEntry = FileSystem.getFileForPath(path + "color_the_tag_name.less");
+        FileUtils.writeText( fileEntry, templateCss, true ).done( function() {
+            alert("CSS Saved.");
+            prefs.set("userCssPath", path);
+            prefs.save();
+            MainViewManager.addToWorkingSet("first-pane", fileEntry);
+        } );
+    }
+    
+
+    function openDialog() {
+        var dl = Dialogs.showModalDialogUsingTemplate(Mustache.render(SLDialog_tmp, context));
+        SLDialog = dl.getElement();
+        //loadPrefs(SLDialog);
+        SLDialog.on( 'click', '.dialog-button-save', function() {
+            saveOriginalCss($('#location_path', SLDialog).val());
+        } );
+    }
+    
+
+    CommandManager.register("Customize Tag Colors", commandID2, openDialog);
+
 
     function handleToggleGuides() {
         enabled = !enabled;
@@ -42,6 +92,7 @@ define(function(require, exports, module) {
     }
 
     CommandManager.register("Simple Color Mode", commandID, handleToggleGuides);
+    
 
     prefs.definePreference("simple_color_mode", "boolean", enabled, {
         description: "Simple Color Mode"
@@ -110,6 +161,9 @@ define(function(require, exports, module) {
         var menu = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
         menu.addMenuItem(commandID);
         enabled = prefs.get("enabled");
+
+        menu.addMenuItem(commandID2);
+        loadCss(prefs.get("userCssPath"));
         color_mode_set();
     });
 });
