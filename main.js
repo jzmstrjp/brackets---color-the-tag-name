@@ -22,13 +22,14 @@ define(function(require, exports, module) {
         commandID2 = "jzmstrjp.color_the_tag_name.customaize_tag_color",
         context                 = {Strings: Strings, MyStrings: STRINGS};
 
-    var commandID = "jzmstrjp.color_the_tag_name.simple_color_mode",
-        preferencesID = "jzmstrjp.color_the_tag_name",
-        enabled     = false,
+    var preferencesID = "jzmstrjp.color_the_tag_name",
         prefs       = PreferencesManager.getExtensionPrefs(preferencesID);
 
-    var simple_color_mode_class_name = "color_the_tag_name_simple_mode",
-        colorful_mode_class_name = "color_the_tag_name_colorful_mode";
+        /*var commandID = "jzmstrjp.color_the_tag_name.simple_color_mode",
+            enabled     = false;*/
+
+    /*var simple_color_mode_class_name = "color_the_tag_name_simple_mode",
+        colorful_mode_class_name = "color_the_tag_name_colorful_mode";*/
 
 
 
@@ -37,6 +38,9 @@ define(function(require, exports, module) {
 
     function loadCss(path){
         if(path){
+            if(path.slice(0,1) === "/"){ // For Mac.
+                path = "file://" + path;
+            }
             ExtensionUtils.loadStyleSheet(module, path + "color_the_tag_name.less");
         } else {
             ExtensionUtils.loadStyleSheet(module, "main.less");
@@ -50,8 +54,8 @@ define(function(require, exports, module) {
             path += "/";
         }
         var fileEntry = FileSystem.getFileForPath(path + "color_the_tag_name.less");
-        FileUtils.writeText( fileEntry, templateCss, true ).done( function() {
-            alert("CSS Saved.");
+        FileUtils.writeText( fileEntry, templateCss, false ).done( function() {
+            alert('CSS Saved. Please edit "color_the_tag_name.less".');
             prefs.set("userCssPath", path);
             prefs.save();
             MainViewManager.addToWorkingSet("first-pane", fileEntry);
@@ -72,12 +76,12 @@ define(function(require, exports, module) {
     CommandManager.register("Customize Tag Colors", commandID2, openDialog);
 
 
-    function handleToggleGuides() {
+    /*function handleToggleGuides() {
         enabled = !enabled;
         color_mode_set();
-    }
+    }*/
 
-    function color_mode_set(){
+    /*function color_mode_set(){
         if(enabled){
             document.body.classList.add(simple_color_mode_class_name);
             document.body.classList.remove(colorful_mode_class_name);
@@ -88,19 +92,16 @@ define(function(require, exports, module) {
         prefs.set("enabled", enabled);
         prefs.save();
         CommandManager.get(commandID).setChecked(enabled);
-        //window.alert("Simple Color Mode:"+enabled+"!");
-    }
+        window.alert("Simple Color Mode:"+enabled+"!");
+    }*/
 
-    CommandManager.register("Simple Color Mode", commandID, handleToggleGuides);
+    //CommandManager.register("Simple Color Mode", commandID, handleToggleGuides);
     
 
-    prefs.definePreference("simple_color_mode", "boolean", enabled, {
+    /*prefs.definePreference("simple_color_mode", "boolean", enabled, {
         description: "Simple Color Mode"
-    });
+    });*/
 
-    
-
-    
 
 
 
@@ -123,7 +124,7 @@ define(function(require, exports, module) {
         }
     };
 
-    
+
 
     function tag_color_change() {
         Array.prototype.forEach.call(cmTag, function(elm, i, arr) {
@@ -159,11 +160,11 @@ define(function(require, exports, module) {
         MainViewManager.on("currentFileChange", updateUI);
         
         var menu = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
-        menu.addMenuItem(commandID);
-        enabled = prefs.get("enabled");
+        //menu.addMenuItem(commandID);
+        //enabled = prefs.get("enabled");
 
         menu.addMenuItem(commandID2);
         loadCss(prefs.get("userCssPath"));
-        color_mode_set();
+        //color_mode_set();
     });
 });
