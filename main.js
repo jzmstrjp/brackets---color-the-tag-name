@@ -36,13 +36,11 @@ define(function(require, exports, module) {
 
 
     function fileExists(path, userCssFileName, callbackFunc){
-    	var motoPath = path;
-    	path = optimizePath(path);
     	FileSystem.resolve(path + userCssFileName, function(errorString, fileSystemEntry, fileSystemStats){
     		if(fileSystemEntry　&&　fileSystemEntry._isFile){
-    			callbackFunc(true, motoPath, userCssFileName);
+    			callbackFunc(true, path, userCssFileName);
     		}else{
-    			callbackFunc(false, motoPath, userCssFileName);
+    			callbackFunc(false, path, userCssFileName);
     		}
     	});
     }
@@ -56,14 +54,15 @@ define(function(require, exports, module) {
     }
 
     function loadCss(bool, motoPath, userCssFileName){
+    	var path = optimizePath(motoPath);
     	if(!bool){
     		ExtensionUtils.loadStyleSheet(module, "main.less");
     	} else {
-    		ExtensionUtils.loadStyleSheet(module, motoPath + userCssFileName);
+    		ExtensionUtils.loadStyleSheet(module, path + userCssFileName);
     	}
     }
 
-    
+
 
     function prepSaveOriginalCss(path) {
         path = path.replace(/\\|\\/g, '/');
@@ -81,9 +80,9 @@ define(function(require, exports, module) {
         FileUtils.writeText(fileEntry, templateCss, false).done(function() {
           alert('CSS Saved. Please edit ' + userCssFileName + '.');
         });
-        prefs.set("userCssPath", motoPath);
-        prefs.save();
       }
+      prefs.set("userCssPath", motoPath);
+      prefs.save();
       MainViewManager.addToWorkingSet("first-pane", fileEntry);
     }
 
