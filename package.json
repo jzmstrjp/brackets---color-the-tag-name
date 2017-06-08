@@ -3,7 +3,7 @@
 	"title": "Color The Tag Name",
 	"description": "This extension colors the tag name. <<<NEW INFO>>> You became to be able to customize tag colors with your original CSS(LESS), From 'View' -> 'Customize Tag Colors'.",
 	"homepage": "https://github.com/jzmstrjp/brackets---color-the-tag-name",
-	"version": "4.0.9",
+	"version": "4.1.0",
 	"keywords": ["color","tag"],
 	"author": "jzmstrjp",
 	"license": "MIT",

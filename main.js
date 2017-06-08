@@ -37,7 +37,7 @@ define(function(require, exports, module) {
 
     function fileExists(path, userCssFileName, callbackFunc){
     	FileSystem.resolve(path + userCssFileName, function(errorString, fileSystemEntry, fileSystemStats){
-    		if(fileSystemEntry　&&　fileSystemEntry._isFile){
+    		if(fileSystemEntry && fileSystemEntry._isFile){
     			callbackFunc(true, path, userCssFileName);
     		}else{
     			callbackFunc(false, path, userCssFileName);
