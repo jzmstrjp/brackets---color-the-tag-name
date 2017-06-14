@@ -75,7 +75,7 @@ define(function(require, exports, module) {
     function saveOriginalCss(bool, motoPath, userCssFileName) {
     	var fileEntry = FileSystem.getFileForPath(motoPath + userCssFileName);
       if(bool){
-      	alert('Css file already exists. Please edit ' + userCssFileName + '.')
+      	alert('Css file already exists. Please edit ' + userCssFileName + '.');
       } else {
         FileUtils.writeText(fileEntry, templateCss, false).done(function() {
           alert('CSS Saved. Please edit ' + userCssFileName + '.');
@@ -149,6 +149,9 @@ define(function(require, exports, module) {
         cmTag = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
         cmAttr = document.getElementById("editor-holder").getElementsByClassName("cm-attribute");
         var editor = EditorManager.getCurrentFullEditor();
+        if(!editor){
+            return;
+        }
         var cm = editor._codeMirror;
         cm.removeOverlay(overlay);
         cm.addOverlay(overlay);
