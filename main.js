@@ -111,6 +111,7 @@ define(function(require, exports, module) {
 
     var cmTag;
     var cmAttr;
+    var cmProp;
     var overlay = {
         token: function(stream, state) {
             var ch;
@@ -143,11 +144,16 @@ define(function(require, exports, module) {
             var html = elm.innerHTML;
             elm.setAttribute("data-attr-name", html);
         });
+        Array.prototype.forEach.call(cmProp, function(elm, i, arr) {
+            var html = elm.innerHTML;
+            elm.setAttribute("data-prop-name", html);
+        });
     }
 
     function updateUI() {
         cmTag = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
         cmAttr = document.getElementById("editor-holder").getElementsByClassName("cm-attribute");
+        cmProp = document.getElementById("editor-holder").getElementsByClassName("cm-property");
         var editor = EditorManager.getCurrentFullEditor();
         if(!editor){
             return;
