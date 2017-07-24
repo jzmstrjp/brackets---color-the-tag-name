@@ -18,14 +18,47 @@ define(function(require, exports, module) {
     var SLDialog_tmp = require("text!htmlContent/dialog_storage_location_setting.html"),
         SLDialog,
         templateCss = require("text!templateCss/template.less"),
-        commandID2 = "jzmstrjp.color_the_tag_name.customaize_tag_color",
+        commandID = "jzmstrjp.color_the_tag_name.customaize_tag_color",
         userCssFileName = "color_the_tag_name.less",
         context = { Strings: Strings, MyStrings: STRINGS };
+
+    var theme_commandID = [
+        "jzmstrjp.color_the_tag_name.theme1",
+        "jzmstrjp.color_the_tag_name.theme2",
+        "jzmstrjp.color_the_tag_name.theme3",
+        "jzmstrjp.color_the_tag_name.theme4",
+        "jzmstrjp.color_the_tag_name.theme5",
+        "jzmstrjp.color_the_tag_name.theme6"
+    ];
 
     var preferencesID = "jzmstrjp.color_the_tag_name",
         prefs = PreferencesManager.getExtensionPrefs(preferencesID);
 
 
+    CommandManager.register("Color The Tag Name - Default Theme", theme_commandID[0], function(){theme_change(0);});
+    CommandManager.register("Color The Tag Name - Theme1", theme_commandID[1], function(){theme_change(1);});
+    CommandManager.register("Color The Tag Name - Theme2", theme_commandID[2], function(){theme_change(2);});
+    CommandManager.register("Color The Tag Name - Theme3", theme_commandID[3], function(){theme_change(3);});
+    CommandManager.register("Color The Tag Name - Theme4", theme_commandID[4], function(){theme_change(4);});
+    CommandManager.register("Color The Tag Name - Theme5", theme_commandID[5], function(){theme_change(5);});
+
+    function make_style_tag_for_theme_change(){
+        var style = document.createElement("style");
+        style.id = "color_the_tag_name_style_tag";
+        document.head.appendChild(style);
+    }
+
+    function theme_change(theme_number){
+        var style_elm = document.getElementById("color_the_tag_name_style_tag");
+        style_elm.innerHTML = "[data-attr-name],[data-tag-name]{filter: hue-rotate(" + theme_number*60 + "deg);-webkit-filter: hue-rotate(" + theme_number*60 + "deg);}";
+        style_elm.innerHTML += ".cm-attribute,.cm-string{filter: hue-rotate(" + theme_number*5 + "deg);-webkit-filter: hue-rotate(" + theme_number*5 + "deg);}";
+        theme_commandID.forEach(function(elm, i, arr){
+            CommandManager.get(elm).setChecked(false);
+        });
+        CommandManager.get(theme_commandID[theme_number]).setChecked(true);
+        prefs.set("theme_number", theme_number);
+        prefs.save();
+    }
 
     function optimizePath(path){
     	if (path.slice(0, 1) === "/") { // For Mac.
@@ -102,10 +135,7 @@ define(function(require, exports, module) {
     }
 
 
-
-
-    CommandManager.register("Customize Tag Colors", commandID2, openDialog);
-
+    CommandManager.register("Color The Tag Name - Make Original CSS(LESS)", commandID, openDialog);
 
 
 
@@ -166,9 +196,17 @@ define(function(require, exports, module) {
 
     // Initialize extension
     AppInit.appReady(function() {
+        make_style_tag_for_theme_change();
         MainViewManager.on("currentFileChange", updateUI);
         var menu = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
-        menu.addMenuItem(commandID2);
+        menu.addMenuDivider();
+        theme_commandID.forEach(function(elm, i, arr){
+            menu.addMenuItem(elm);
+        });
+        menu.addMenuDivider();
+        menu.addMenuItem(commandID);
+        menu.addMenuDivider();
         prepCss(prefs.get("userCssPath"));
+        if(prefs.get("theme_number"))theme_change(prefs.get("theme_number"));
     });
 });
