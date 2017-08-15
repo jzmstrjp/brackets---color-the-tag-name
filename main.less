@@ -4,6 +4,25 @@ body.dark #editor-holder{
 	.cm-attribute{color: #C4E0AB;}
 	[data-attr-name="id"]{color: #f33;}
 
+	[data-prop-name="position"],
+	[data-prop-name="z-index"],
+	[data-prop-name="top"],
+	[data-prop-name="bottom"],
+	[data-prop-name="left"],
+	[data-prop-name="right"],
+	[data-prop-name="content"],
+	[data-prop-name="display"],
+	[data-prop-name="width"],
+	[data-prop-name="height"],
+	[data-prop-name^="max"],
+	[data-prop-name^="overflow"],
+	[data-prop-name="float"],
+	[data-prop-name^="margin"],
+	[data-prop-name^="padding"],
+	[data-prop-name="color"],
+	[data-prop-name^="text"],
+	[data-prop-name^="font"]{-webkit-filter: brightness(200%);filter: brightness(200%);}
+
 	[data-tag-name="a"],[data-attr-name="href"],[data-attr-name="target"]{color: #00FF36;}
 	[data-tag-name="abbr"]{color: #FFF600;}
 	[data-tag-name="address"]{color: #ee6;}

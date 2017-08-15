@@ -13,6 +13,7 @@ define(function(require, exports, module) {
         Dialogs = brackets.getModule("widgets/Dialogs"),
         Strings = brackets.getModule("strings"),
         STRINGS = require("modules/Strings"),
+        Mustache = brackets.getModule("thirdparty/mustache/mustache"),
         PreferencesManager = brackets.getModule("preferences/PreferencesManager");
 
     var SLDialog_tmp = require("text!htmlContent/dialog_storage_location_setting.html"),
@@ -50,9 +51,9 @@ define(function(require, exports, module) {
 
     function theme_change(theme_number){
         var style_elm = document.getElementById("color_the_tag_name_style_tag");
-        style_elm.innerHTML = "[data-attr-name],[data-tag-name]{filter: hue-rotate(" + theme_number*60 + "deg);-webkit-filter: hue-rotate(" + theme_number*60 + "deg);}";
-        style_elm.innerHTML += ".cm-attribute,.cm-string{filter: hue-rotate(" + theme_number*5 + "deg);-webkit-filter: hue-rotate(" + theme_number*5 + "deg);}";
-        theme_commandID.forEach(function(elm, i, arr){
+        style_elm.innerHTML = ".cm-attribute,.cm-string{filter: hue-rotate(" + theme_number*5 + "deg);-webkit-filter: hue-rotate(" + theme_number*5 + "deg);}";
+        style_elm.innerHTML += "[data-attr-name],[data-tag-name]{filter: hue-rotate(" + theme_number*60 + "deg);-webkit-filter: hue-rotate(" + theme_number*60 + "deg);}";
+        theme_commandID.forEach(function(elm){
             CommandManager.get(elm).setChecked(false);
         });
         CommandManager.get(theme_commandID[theme_number]).setChecked(true);
@@ -69,7 +70,7 @@ define(function(require, exports, module) {
 
 
     function fileExists(path, userCssFileName, callbackFunc){
-    	FileSystem.resolve(path + userCssFileName, function(errorString, fileSystemEntry, fileSystemStats){
+    	FileSystem.resolve(path + userCssFileName, function(errorString, fileSystemEntry/*, fileSystemStats*/){
     		if(fileSystemEntry && fileSystemEntry._isFile){
     			callbackFunc(true, path, userCssFileName);
     		}else{
@@ -143,8 +144,8 @@ define(function(require, exports, module) {
     var cmAttr;
     var cmProp;
     var overlay = {
-        token: function(stream, state) {
-            var ch;
+        token: function(stream/*, state*/) {
+            //var ch;
             if (stream.match(/<(\/|)/)) {
                 return "open-bracket";
             } else if (stream.match(/(\/|)>/)) {
@@ -170,11 +171,11 @@ define(function(require, exports, module) {
                 }
             }
         });
-        Array.prototype.forEach.call(cmAttr, function(elm, i, arr) {
+        Array.prototype.forEach.call(cmAttr, function(elm/*, i, arr*/) {
             var html = elm.innerHTML;
             elm.setAttribute("data-attr-name", html);
         });
-        Array.prototype.forEach.call(cmProp, function(elm, i, arr) {
+        Array.prototype.forEach.call(cmProp, function(elm/*, i, arr*/) {
             var html = elm.innerHTML;
             elm.setAttribute("data-prop-name", html);
         });
@@ -200,13 +201,15 @@ define(function(require, exports, module) {
         MainViewManager.on("currentFileChange", updateUI);
         var menu = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
         menu.addMenuDivider();
-        theme_commandID.forEach(function(elm, i, arr){
+        theme_commandID.forEach(function(elm/*, i, arr*/){
             menu.addMenuItem(elm);
         });
         menu.addMenuDivider();
         menu.addMenuItem(commandID);
         menu.addMenuDivider();
         prepCss(prefs.get("userCssPath"));
-        if(prefs.get("theme_number"))theme_change(prefs.get("theme_number"));
+        if(prefs.get("theme_number")){
+            theme_change(prefs.get("theme_number"));
+        }
     });
 });
