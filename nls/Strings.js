@@ -2,7 +2,7 @@ define( function( require, exports, module ) {
 	'use strict';
 	
 	module.exports = {
-		en: true,
+		root: true,
 		ja: true
 	};
 } );
