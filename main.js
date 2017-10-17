@@ -143,6 +143,8 @@ define(function(require, exports, module) {
     var cmTag;
     var cmAttr;
     var cmProp;
+    var cmBuiltin;
+    var cmQualifier;
     var overlay = {
         token: function(stream/*, state*/) {
             //var ch;
@@ -179,12 +181,24 @@ define(function(require, exports, module) {
             var html = elm.innerHTML;
             elm.setAttribute("data-prop-name", html);
         });
+
+        Array.prototype.forEach.call(cmBuiltin, function(elm/*, i, arr*/) {
+            var html = elm.innerHTML;
+            elm.setAttribute("data-builtin-name", html);
+        });
+
+        Array.prototype.forEach.call(cmQualifier, function(elm/*, i, arr*/) {
+            var html = elm.innerHTML;
+            elm.setAttribute("data-qualifier-name", html);
+        });
     }
 
     function updateUI() {
         cmTag = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
         cmAttr = document.getElementById("editor-holder").getElementsByClassName("cm-attribute");
         cmProp = document.getElementById("editor-holder").getElementsByClassName("cm-property");
+        cmBuiltin = document.getElementById("editor-holder").getElementsByClassName("cm-builtin");
+        cmQualifier = document.getElementById("editor-holder").getElementsByClassName("cm-qualifier");
         var editor = EditorManager.getCurrentFullEditor();
         if(!editor){
             return;
