@@ -1,9 +1,9 @@
 {
 	"name": "brackets-color-the-tag-name",
 	"title": "Color The Tag Name",
-	"description": "Color the tag name.",
+	"description": "Color the tag name. You can make your original CSS.",
 	"homepage": "https://github.com/jzmstrjp/brackets---color-the-tag-name",
-	"version": "4.2.3",
+	"version": "5.0.0",
 	"keywords": ["color","tag"],
 	"author": "jzmstrjp",
 	"license": "MIT",
@@ -16,7 +16,7 @@
 	],
 	"package-i18n":{
 		"ja":{
-			"description": "タグごとにカラフルに色分けします。",
+			"description": "タグごとにカラフルに色分けします。自作のCSSも作れます",
 			"title": "タグに色つけ太郎"
 		}
 	}

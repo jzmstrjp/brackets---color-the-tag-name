@@ -51,8 +51,11 @@ define(function(require, exports, module) {
 
     function theme_change(theme_number){
         var style_elm = document.getElementById("color_the_tag_name_style_tag");
-        style_elm.innerHTML = ".cm-attribute,.cm-string{filter: hue-rotate(" + theme_number*5 + "deg);-webkit-filter: hue-rotate(" + theme_number*5 + "deg);}";
-        style_elm.innerHTML += "[data-attr-name],[data-tag-name]{filter: hue-rotate(" + theme_number*60 + "deg);-webkit-filter: hue-rotate(" + theme_number*60 + "deg);}";
+        if(theme_number === 0){
+            style_elm.innerHTML = '';
+        }else{
+            style_elm.innerHTML = '[class*="cm-jzmstrjp-tag-"]{-webkit-filter: hue-rotate(' + theme_number*60 + 'deg) !important; filter: hue-rotate(' + theme_number*60 + 'deg) !important;}';    
+        }
         theme_commandID.forEach(function(elm){
             CommandManager.get(elm).setChecked(false);
         });
@@ -138,20 +141,12 @@ define(function(require, exports, module) {
 
     CommandManager.register("Color The Tag Name - Make Original CSS(LESS)", commandID, openDialog);
 
-
-
-    var cmTag;
-    var cmAttr;
-    var cmProp;
-    var cmBuiltin;
-    var cmQualifier;
     var overlay = {
         token: function(stream/*, state*/) {
-            //var ch;
-            if (stream.match(/<(\/|)/)) {
-                return "open-bracket";
-            } else if (stream.match(/(\/|)>/)) {
-                return "close-bracket";
+            var arr;
+            arr = stream.match(/<(\/|)([a-z]+[1-6]*)(|(.*?)[^?%])>/);
+            if (arr) {
+                return "jzmstrjp-tag-" + arr[2].toUpperCase();
             }
             while (stream.next() != null && !stream.match(/<(\/|)|(\/|)>/, false)) {}
             return null;
@@ -161,44 +156,15 @@ define(function(require, exports, module) {
 
 
     function tag_color_change() {
-        Array.prototype.forEach.call(cmTag, function(elm, i, arr) {
+        var cmTag = document.getElementById("editor-holder").querySelectorAll(".cm-tag:not(.cm-comment), .cm-attribute, .cm-builtin, .cm-qualifier");
+        Array.prototype.forEach.call(cmTag, function(elm) {
             var html = elm.innerHTML;
-            if (!elm.classList.contains("cm-bracket")) {
-                if (arr[i - 1] && arr[i - 1].classList.contains("cm-open-bracket")) {
-                    arr[i - 1].setAttribute("data-tag-name", html);
-                }
-                elm.setAttribute("data-tag-name", html);
-                if (arr[i + 1] && arr[i + 1].classList.contains("cm-close-bracket")) {
-                    arr[i + 1].setAttribute("data-tag-name", html);
-                }
-            }
-        });
-        Array.prototype.forEach.call(cmAttr, function(elm/*, i, arr*/) {
-            var html = elm.innerHTML;
-            elm.setAttribute("data-attr-name", html);
-        });
-        Array.prototype.forEach.call(cmProp, function(elm/*, i, arr*/) {
-            var html = elm.innerHTML;
-            elm.setAttribute("data-prop-name", html);
-        });
-
-        Array.prototype.forEach.call(cmBuiltin, function(elm/*, i, arr*/) {
-            var html = elm.innerHTML;
-            elm.setAttribute("data-builtin-name", html);
-        });
-
-        Array.prototype.forEach.call(cmQualifier, function(elm/*, i, arr*/) {
-            var html = elm.innerHTML;
-            elm.setAttribute("data-qualifier-name", html);
+            html = html.replace(/^(#|\.)/, "");
+            elm.classList.add("cm-jzmstrjp-tag-" + html.toUpperCase());
         });
     }
 
     function updateUI() {
-        cmTag = document.getElementById("editor-holder").getElementsByClassName("cm-tag");
-        cmAttr = document.getElementById("editor-holder").getElementsByClassName("cm-attribute");
-        cmProp = document.getElementById("editor-holder").getElementsByClassName("cm-property");
-        cmBuiltin = document.getElementById("editor-holder").getElementsByClassName("cm-builtin");
-        cmQualifier = document.getElementById("editor-holder").getElementsByClassName("cm-qualifier");
         var editor = EditorManager.getCurrentFullEditor();
         if(!editor){
             return;
