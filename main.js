@@ -144,7 +144,7 @@ define(function(require, exports, module) {
     var overlay = {
         token: function(stream/*, state*/) {
             var arr;
-            arr = stream.match(/<(\/|)([a-z]+[1-6]*)(|(.*?)[^?%])>/);
+            arr = stream.match(/<(\/|)([a-z]+[1-6]*)(|(.*?)[^?%-])>/);
             if (arr) {
                 return "jzmstrjp-tag-" + arr[2].toUpperCase();
             }
