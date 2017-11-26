@@ -11,4 +11,4 @@ I am hoping to find a job as a coder in Tokyo, Japan. Please hire me.
 ## そして私は無職になりました。
 都内でコーダーとして就職希望です。私を雇ってください。
 
-jzmstrjp <jazzm@ster.jp.net>
+E-mail: <jazzm[a]ster.jp.net>
