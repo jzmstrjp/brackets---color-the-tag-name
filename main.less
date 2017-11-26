@@ -1,15 +1,16 @@
 /*--- Dark ---*/
+
 #editor-holder{
-	:not(.cm-meta):not(.cm-keyword):not(.cm-variable):not(.cm-comment){
+	.cm-tag, .cm-string, .cm-attribute, .cm-qualifier, .cm-builtin{
 		&.cm-jzmstrjp-tag{
 			&-STYLE{color: #FFA200;}
 			&-A{color: rgb(90, 255, 123);}
 			&-ABBR{color: #FFF600;}
 			&-ADDRESS{color: #EE6;}
-			&-AREA{color: #00FF36;}
+			&-AREA{color: #47FF6D;}
 			&-ARTICLE{color: #FC0;}
-			&-ASIDE{color: #DCB;}
-			&-AUDIO{color: #CED;}
+			&-ASIDE{color: #FFCA96;}
+			&-AUDIO{color: #A1FFD0;}
 			&-B{color: #EAF;}
 			&-BASE{color: #AEFF00;}
 			&-BLOCKQUOTE,&-Q{color: #FFB7AD;}
@@ -28,7 +29,7 @@
 			&-DIV{color: rgb(206, 228, 231);}
 			&-DL{color: #E93;}
 			&-DT{color: #9DF;}
-			&-EM{color: #E6F;}
+			&-EM{color: #EF71FF;}
 			&-FIELDSET{color: #FCE;}
 			&-FIGCAPTION{color: #AAF;}
 			&-FIGURE{color: #E6EECC;}
@@ -107,12 +108,6 @@
 	}
 }
 
-
-
-
-
-
-
 /*--- Light ---*/
 body:not(.dark) #editor-holder{
 	.CodeMirror-code{
@@ -125,14 +120,9 @@ body:not(.dark) #editor-holder{
 	}
 }
 
-
-
-
-
-
 /* common */
 #editor-holder{
-	:not(.cm-meta):not(.cm-keyword):not(.cm-variable):not(.cm-comment):not(.cm-attribute){
+	.cm-tag, .cm-builtin, .cm-qualifier{
 		&.cm-jzmstrjp-tag{
 			&-H1,
 			&-H2,
@@ -158,10 +148,9 @@ body:not(.dark) #editor-holder{
 			&-FORM,
 			&-SECTION{font-weight: bold;}
 		}
-		
-		&.cm-bracket {opacity: .85;}
 	}
-	:not(.cm-meta):not(.cm-keyword):not(.cm-variable):not(.cm-comment):not(.cm-builtin):not(.cm-qualifier):not(.cm-tag){
+	.cm-bracket {opacity: .9;}
+	.cm-attribute{
 		&.cm-jzmstrjp-tag-ID:not(#arienai){color: #f33;font-weight: bold;}
 	}
 }

@@ -1,7 +1,7 @@
 //Let's customize colors. And reload Brackets.
 
 #editor-holder{
-	:not(.cm-meta):not(.cm-keyword):not(.cm-variable):not(.cm-comment){
+	.cm-tag, .cm-string, .cm-attribute, .cm-qualifier, .cm-builtin{
 		&.cm-jzmstrjp-tag{
 			//&-STYLE{color: #FFA200;}
 			&-A{color: #8BC460;}
@@ -108,12 +108,6 @@
 	}
 }
 
-
-
-
-
-
-
 /*--- Light ---*/
 body:not(.dark) #editor-holder{
 	.CodeMirror-code{
@@ -126,15 +120,11 @@ body:not(.dark) #editor-holder{
 	}
 }
 
-
-
-
-
-
 /* common */
 #editor-holder{
-	:not(.cm-meta):not(.cm-keyword):not(.cm-variable):not(.cm-comment):not(.cm-attribute){
-		/*&.cm-jzmstrjp-tag{
+	.cm-tag, .cm-builtin, .cm-qualifier{
+		/*
+		&.cm-jzmstrjp-tag{
 			&-H1,
 			&-H2,
 			&-H3,
@@ -158,11 +148,11 @@ body:not(.dark) #editor-holder{
 			&-DT,
 			&-FORM,
 			&-SECTION{font-weight: bold;}
-		}*/
-		
-		&.cm-bracket {opacity: .85;}
+		}
+		*/
 	}
-	:not(.cm-meta):not(.cm-keyword):not(.cm-variable):not(.cm-comment):not(.cm-builtin):not(.cm-qualifier):not(.cm-tag){
+	.cm-bracket {opacity: .9;}
+	.cm-attribute{
 		&.cm-jzmstrjp-tag-ID:not(#arienai){
 			color: #B20000;
 			//font-weight: bold;
