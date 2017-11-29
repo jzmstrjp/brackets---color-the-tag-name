@@ -5,10 +5,5 @@ like this...!
 ## Your Original CSS(LESS)
 You can customize tag colors with your original CSS(LESS), From 'View' -> 'Customize Tag Colors'.
 
-## And now I am unemployed.
-I am hoping to find a job as a coder in Tokyo, Japan. Please hire me.
-
-## そして私は無職になりました。
-都内でコーダーとして就職希望です。私を雇ってください。
-
-E-mail: jazzm[a]ster.jp.net
+## そして私は無職ではなくなりました。
+私はフロントエンドエンジニアとして職を得ることができました。

@@ -1,9 +1,9 @@
 {
 	"name": "brackets-color-the-tag-name",
 	"title": "Color The Tag Name",
-	"description": "Color the tag name. You can make your original CSS. And now I am unemployed. I am hoping to find a job as a coder in Tokyo, Japan. Please hire me.",
+	"description": "Color the tag name. You can make your original CSS.",
 	"homepage": "https://github.com/jzmstrjp/brackets---color-the-tag-name",
-	"version": "5.0.9",
+	"version": "5.0.11",
 	"keywords": ["color","tag"],
 	"author": "jzmstrjp <jazzm@ster.jp.net> (https://github.com/jzmstrjp/brackets---color-the-tag-name)",
 	"license": "MIT",
@@ -16,7 +16,7 @@
 	],
 	"package-i18n":{
 		"ja":{
-			"description": "タグごとにカラフルに色分けします。自作のCSSも作れます。そして私は無職になりました。都内でコーダーとして就職希望です。私を雇ってください。",
+			"description": "タグごとにカラフルに色分けします。自作のCSSも作れます。そして私は無職ではなくなりました。私はフロントエンドエンジニアとして職を得ることができました。",
 			"title": "タグに色つけ太郎"
 		}
 	}
