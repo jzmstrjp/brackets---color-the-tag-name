@@ -1,10 +1,11 @@
 /*--- Dark ---*/
 
 #editor-holder{
-	.cm-tag, .cm-string, .cm-attribute, .cm-qualifier, .cm-builtin{
+	.cm-tag, .cm-string, .cm-attribute, .cm-qualifier, .cm-builtin, .cm-overlay{
 		&.cm-jzmstrjp-tag{
 			&-STYLE{color: #FFA200;}
 			&-A{color: rgb(90, 255, 123);}
+			&-ROUTER-LINK, &-ROUTER-VIEW, &-TEMPLATE{color: rgb(90, 255, 206);}
 			&-ABBR{color: #FFF600;}
 			&-ADDRESS{color: #EE6;}
 			&-AREA{color: #47FF6D;}
@@ -48,7 +49,7 @@
 			&-HTML{color: #CAC;}
 			&-I{color: #FFFE80;}
 			&-IFRAME{color: #FF80C2;}
-			&-IMG{color: #48DFFF;}
+			&-IMG,&-IMAGE{color: #48DFFF;}
 			&-INPUT{color: #DCC;}
 			&-INS{color: #FFCCF1;}
 			&-KBD{color: #9FC;}
@@ -79,6 +80,7 @@
 			&-SECTION{color: #FFCCDD;}
 			&-SELECT{color: #CFF;}
 			&-SMALL{color: #AAF;}
+			&-SOURCE{color: #48DFFF;}
 			&-SPAN{color: #BBF6FF;}
 			&-STRONG{color: #FC9;}
 			&-SUB{color: #ADD;}

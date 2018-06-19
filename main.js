@@ -35,6 +35,8 @@ define(function(require, exports, module) {
     var preferencesID = "jzmstrjp.color_the_tag_name",
         prefs = PreferencesManager.getExtensionPrefs(preferencesID);
 
+    var tagRegExp = new RegExp(/^[a-z\-]+[1-6]*$/);
+
 
     CommandManager.register("Color The Tag Name - Default Theme", theme_commandID[0], function(){theme_change(0);});
     CommandManager.register("Color The Tag Name - Theme1", theme_commandID[1], function(){theme_change(1);});
@@ -144,8 +146,8 @@ define(function(require, exports, module) {
     var overlay = {
         token: function(stream/*, state*/) {
             var arr;
-            arr = stream.match(/<(\/|)([a-z]+[1-6]*)(|(.*?)[^?%-])>/);
-            if (arr) {
+            arr = stream.match(/<(\/|)([a-z\-]+[1-6]*)(|(.*?)[^?%\-$])>/);
+            if (arr && tagRegExp.test(arr[2])) {
                 return "jzmstrjp-tag-" + arr[2].toUpperCase();
             }
             while (stream.next() != null && !stream.match(/<(\/|)|(\/|)>/, false)) {}
@@ -160,7 +162,9 @@ define(function(require, exports, module) {
         Array.prototype.forEach.call(cmTag, function(elm) {
             var html = elm.innerHTML;
             html = html.replace(/^(#|\.)/, "");
-            elm.classList.add("cm-jzmstrjp-tag-" + html.toUpperCase());
+            if(tagRegExp.test(html)){
+                elm.classList.add("cm-jzmstrjp-tag-" + html.toUpperCase());
+            }
         });
     }
 
