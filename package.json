@@ -3,7 +3,7 @@
 	"title": "Color The Tag Name",
 	"description": "Color the tag name. You can make your original CSS, too. It also supports remote files.",
 	"homepage": "https://github.com/jzmstrjp/brackets---color-the-tag-name",
-	"version": "5.0.15",
+	"version": "5.0.16",
 	"keywords": ["color","tag"],
 	"author": "jzmstrjp <jazzm@ster.jp.net>",
 	"license": "MIT",

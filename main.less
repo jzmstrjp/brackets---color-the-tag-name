@@ -2,7 +2,7 @@
 
 #editor-holder{
 	.cm-tag, .cm-string, .cm-attribute, .cm-qualifier, .cm-builtin, .cm-overlay{
-		&:not(.cm-comment).cm-jzmstrjp-tag{
+		&:not(.cm-comment):not(.cm-meta):not(.cm-variable-2):not(.cm-keyword):not(.cm-meta).cm-jzmstrjp-tag{
 			&-STYLE{color: #FFA200;}
 			&-A{color: rgb(90, 255, 123);}
 			&-ROUTER-LINK, &-ROUTER-VIEW, &-TEMPLATE{color: rgb(90, 255, 206);}
